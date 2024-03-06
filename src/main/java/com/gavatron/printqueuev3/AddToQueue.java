@@ -21,7 +21,7 @@ public class AddToQueue {
         for (String s : file) {
             if (s.contains("total filament used [g] ")) {
                 pricingValues.put("filament", (Double.parseDouble(s.split("=")[1].trim()) / 1000.0) * settings.kgPrice());
-            } else if (s.contains("(normal mode)")) {
+            } else if (s.contains("estimated printing time (normal mode)")) {
                 timeString = s.split("=")[1].trim();
                 for (String t : timeString.split(" ")) {
                     double value = Double.parseDouble(t.substring(0, t.length() - 1));
